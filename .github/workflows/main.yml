@@ -15,5 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag chineseocr_lite:latest
+      run: docker build . --file Dockerfile --tag vix1994/chineseocr_lite:latest
            docker push vix1994/chineseocr_lite:latest
