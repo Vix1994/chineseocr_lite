@@ -14,7 +14,7 @@ RUN yum -y update \
     && yum -y install  devtoolset-7-gcc* \
     && echo 'source /opt/rh/devtoolset-7/enable' >> ~/.bash_profile \
     && source ~/.bash_profile \
-    && scl enable devtoolset-7 bash 
+    && scl enable devtoolset-7 bash
 
 
 RUN pip3 install --user  -U pip -i https://pypi.tuna.tsinghua.edu.cn/simple/  \ 
