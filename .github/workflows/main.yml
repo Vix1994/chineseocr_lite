@@ -15,6 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: |
-           docker build . --file Dockerfile --tag vix1994/chineseocr_lite:latest
-           docker push vix1994/chineseocr_lite:latest
+      run: docker build . --file Dockerfile --tag vix1994/chineseocr_lite:latest
+           
+    - name: Log in registry
+      run: echo "${{ secrets.REGISTRY_ACCESS_TOKEN }}" | docker login -u vix1994 --password-stdin
+      
+    - name: Push to registry
+      run: docker push vix1994/chineseocr_lite:latest
